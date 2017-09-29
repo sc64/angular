@@ -1,1 +1,50 @@
-OK
+<html ng-app="phonecatApp">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="css/bootstrap.css" />
+
+	<title>K-Gen by SC64</title>
+ 
+	<script src="js/angular.js"></script>
+	
+	
+</head>
+<body ng-controller="ExampleController">
+	<div class="container text-center">
+		<h1>K-Gen by SC64</h1>
+	</div>
+	<div class="container">
+		<h3>Art:</h3>
+		<form name="myForm" ng-controller="ExampleController">
+           <label>
+             <input type="radio" ng-model="color.name" value="red">
+             Red
+           </label><br/>
+           <label>
+             <input type="radio" ng-model="color.name" ng-value="specialValue">
+             Green
+           </label><br/>
+           <label>
+             <input type="radio" ng-model="color.name" value="blue">
+             Blue
+           </label><br/>
+           <tt>color = {{color.name | json}}</tt><br/>
+          </form>
+		<p>Nothing here {{'yet' + '!'}}</p>
+	</div>
+	
+	
+		<script>
+			angular.module('radioExample', []).controller('ExampleController', ['$scope', function($scope) {
+               $scope.color = {
+                 name: 'blue'
+               };
+               $scope.specialValue = {
+                 "id": "12345",
+                 "value": "green"
+               };
+             }]);
+		</script>
+</body>
+</html>
